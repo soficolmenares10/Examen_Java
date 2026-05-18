@@ -14,8 +14,8 @@ class RoomCard extends HTMLElement {
       <div class="room-card">
 
         <img
-          src="https://images.unsplash.com/photo-1566073771259-6a8506099945"
-          alt="${room.name}"
+          <img src="${room.image}" alt="${room.name}">
+
         >
 
         <div class="card-content">

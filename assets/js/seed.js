@@ -25,7 +25,7 @@ export function seedRooms() {
         'WiFi, Jacuzzi, Minibar, Room Service',
 
       image:
-        'assets/images/room1.jpg'
+        'https://images.unsplash.com/photo-1566665797739-1674de7a421a?q=80&w=1974&auto=format&fit=crop'
     },
 
     {
@@ -43,27 +43,27 @@ export function seedRooms() {
         'WiFi, TV Smart, Aire acondicionado',
 
       image:
-        'assets/images/room2.jpg'
+        'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=2070&auto=format&fit=crop'
     },
-
-    {
+{
       id: generateId(),
 
       name: 'Suite Premium',
 
-      beds: 3,
+      beds: 1,
 
-      capacity: 6,
+      capacity: 2,
 
       price: 700000,
 
       services:
-        'Piscina privada, Jacuzzi, WiFi, Minibar',
+        'WiFi, TV Smart, Aire acondicionado',
 
       image:
-        'assets/images/room3.jpg'
-    }
+        'https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1974&auto=format&fit=crop'
+    },
 
+   
   ];
 
   Storage.save(
