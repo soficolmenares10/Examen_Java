@@ -23,10 +23,8 @@
 
 <body>
 
-  <!-- NAVBAR -->
   <app-navbar></app-navbar>
 
-  <!-- RESERVAS -->
   <section class="section">
 
     <div class="section-title">
@@ -37,13 +35,13 @@
 
       <p>
         Encuentra la habitación perfecta
-        para vivir una experiencia de lujo.
+        para vivir una experiencia única.
       </p>
 
     </div>
 
-    <!-- FORMULARIO -->
-    <form id="searchForm" class="reservation-form">
+    <!-- FORM -->
+    <form id="searchForm">
 
       <input
         type="date"
@@ -60,8 +58,8 @@
       <input
         type="number"
         id="guests"
+        placeholder="Cantidad de personas"
         min="1"
-        placeholder="Número de personas"
         required
       >
 
@@ -71,14 +69,13 @@
 
     </form>
 
-    <!-- HABITACIONES -->
+    <!-- RESULTADOS -->
     <div id="availableRooms">
 
     </div>
 
   </section>
 
-  <!-- FOOTER -->
   <app-footer></app-footer>
 
   <!-- COMPONENTS -->
@@ -92,7 +89,7 @@
     src="assets/components/footer.js"
   ></script>
 
-  <!-- APP -->
+  <!-- JS -->
   <script
     type="module"
     src="assets/js/app.js"
