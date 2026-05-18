@@ -19,51 +19,228 @@
     href="assets/css/global.css"
   >
 
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
 </head>
 
 <body>
 
+  <!-- NAVBAR -->
   <app-navbar></app-navbar>
 
-  <section class="section">
+  <!-- HERO -->
+  <section class="contact-hero">
 
-    <div class="section-title">
+    <div class="contact-overlay">
 
-      <h2>
-        Contacto
-      </h2>
-
-      <p>
-        Comunícate con nosotros
-        para más información.
-      </p>
-
-    </div>
-
-    <div class="contact-box">
+      <h1>
+        Contáctanos
+      </h1>
 
       <p>
-        📍 Bucaramanga, Santander
-      </p>
-
-      <p>
-        📞 +57 300 000 0000
-      </p>
-
-      <p>
-        ✉ contacto@rincondelcarmen.com
-      </p>
-
-      <p>
-        🕒 Atención 24/7
+        Déjanos tus datos y uno de nuestros
+        asesores se comunicará contigo
+        lo antes posible.
       </p>
 
     </div>
 
   </section>
 
+  <!-- CONTACT -->
+  <section class="section">
+
+    <div class="section-title">
+
+      <h2>
+        Atención personalizada
+      </h2>
+
+      <p>
+        Completa el formulario y nos pondremos
+        en contacto contigo para ayudarte
+        con tu reserva o cualquier duda.
+      </p>
+
+    </div>
+
+    <div class="contact-grid">
+
+      <!-- INFO -->
+      <div class="contact-box luxury-box">
+
+        <div class="contact-item">
+
+          <i class="fa-solid fa-location-dot"></i>
+
+          <div>
+
+            <h3>
+              Ubicación
+            </h3>
+
+            <p>
+              Bucaramanga, Santander,
+              Colombia
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="contact-item">
+
+          <i class="fa-solid fa-phone"></i>
+
+          <div>
+
+            <h3>
+              Teléfono
+            </h3>
+
+            <p>
+              +57 300 000 0000
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="contact-item">
+
+          <i class="fa-solid fa-envelope"></i>
+
+          <div>
+
+            <h3>
+              Correo
+            </h3>
+
+            <p>
+              contacto@rincondelcarmen.com
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="contact-item">
+
+          <i class="fa-solid fa-clock"></i>
+
+          <div>
+
+            <h3>
+              Horario
+            </h3>
+
+            <p>
+              Atención 24/7
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- FORM -->
+      <div class="contact-box luxury-box">
+
+        <form
+          id="contactForm"
+          class="contact-form"
+        >
+
+          <input
+            type="text"
+            id="name"
+            placeholder="Nombre completo"
+            required
+          >
+
+          <input
+            type="email"
+            id="email"
+            placeholder="Correo electrónico"
+            required
+          >
+
+          <input
+            type="tel"
+            id="phone"
+            placeholder="Número de teléfono"
+            required
+          >
+
+          <select
+            id="service"
+            required
+          >
+
+            <option value="">
+              Selecciona un servicio
+            </option>
+
+            <option>
+              Reserva de habitación
+            </option>
+
+            <option>
+              Eventos
+            </option>
+
+            <option>
+              Spa
+            </option>
+
+            <option>
+              Restaurante
+            </option>
+
+            <option>
+              Otro
+            </option>
+
+          </select>
+
+          <textarea
+            id="message"
+            placeholder="Escribe tu mensaje..."
+            rows="6"
+            required
+          ></textarea>
+
+          <button type="submit">
+            Enviar información
+          </button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- MAP -->
+  <section class="map-section">
+
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31687.963978347705!2d-73.125942!3d7.119349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e683f64b9f31c3b%3A0x4b0e9a40b8f7b8f!2sBucaramanga%2C%20Santander!5e0!3m2!1ses!2sco!4v1716071212121!5m2!1ses!2sco"
+      allowfullscreen=""
+      loading="lazy"
+    ></iframe>
+
+  </section>
+
+  <!-- FOOTER -->
   <app-footer></app-footer>
 
+  <!-- COMPONENTS -->
   <script
     type="module"
     src="assets/components/navbar.js"
@@ -73,6 +250,60 @@
     type="module"
     src="assets/components/footer.js"
   ></script>
+
+  <!-- FORM SCRIPT -->
+  <script type="module">
+
+    const form =
+      document.getElementById('contactForm');
+
+    form.addEventListener(
+      'submit',
+      event => {
+
+        event.preventDefault();
+
+        const contacts =
+          JSON.parse(
+            localStorage.getItem('contacts')
+          ) || [];
+
+        const newContact = {
+
+          id: Date.now(),
+
+          name:
+            document.getElementById('name').value,
+
+          email:
+            document.getElementById('email').value,
+
+          phone:
+            document.getElementById('phone').value,
+
+          service:
+            document.getElementById('service').value,
+
+          message:
+            document.getElementById('message').value
+        };
+
+        contacts.push(newContact);
+
+        localStorage.setItem(
+          'contacts',
+          JSON.stringify(contacts)
+        );
+
+        alert(
+          'Tu información fue enviada correctamente.'
+        );
+
+        form.reset();
+      }
+    );
+
+  </script>
 
 </body>
 </html>
