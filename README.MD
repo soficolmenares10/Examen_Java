@@ -64,11 +64,11 @@ Control de disponibilidad
 
 | landing page | reservas |
 | :---: | :---: |
-| <img src="./assets/imagenes/Inicio.png" width="250" alt="landing page"> | <img src="./assets/imagenes/reserva.png" width="500" alt="reservas"> |
+| <img src="./assets/imagenes/Inicio.png" width="400" alt="landing page"> | <img src="./assets/imagenes/reserva.png" width="400" alt="reservas"> |
 
 | contacto | servicios |
 | :---: | :---: |
-| <img src="./assets/imagenes/contacto.png" width="250" alt="contacto"> | <img src="./assets/imagenes/servicios.png" width="500" alt="servicios"> |
+| <img src="./assets/imagenes/contacto.png" width="400" alt="contacto"> | <img src="./assets/imagenes/servicios.png" width="400" alt="servicios"> |
 
 
 Lógica del sistema
