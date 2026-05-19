@@ -1,199 +1,92 @@
-#  HOTEL EL RINCÓN DEL CARMEN
+ Hotel El Rincón del Carmen
+Descripción del proyecto
 
-##  Descripción general del proyecto
+Hotel El Rincón del Carmen es una aplicación web moderna desarrollada como simulación de un sistema Full Stack Junior. Su objetivo es ofrecer una plataforma digital para la gestión de reservas de habitaciones, autenticación de usuarios y administración interna del hotel.
 
-El presente proyecto consiste en el desarrollo de un sitio web moderno, responsive, funcional y visualmente atractivo para el Hotel El Rincón del Carmen, con el objetivo de ofrecer sus servicios en línea, atraer nuevos clientes y permitir la gestión de reservas de habitaciones.
+El sistema permite a los usuarios consultar disponibilidad, realizar reservas y gestionarlas en tiempo real, mientras que un panel administrativo permite controlar habitaciones y reservas.
 
-La aplicación fue desarrollada simulando un entorno Full Stack Junior utilizando tecnologías del lado del cliente y almacenamiento local mediante LocalStorage, aplicando buenas prácticas de programación, modularización y diseño responsive.
+El proyecto fue construido aplicando buenas prácticas de desarrollo frontend, arquitectura modular y almacenamiento local con LocalStorage, simulando el comportamiento de una API real.
 
-El sistema permite:
+ Objetivo
 
-- Consultar habitaciones disponibles.
-- Realizar reservas.
-- Cancelar reservas.
-- Registrarse e iniciar sesión.
-- Gestionar habitaciones desde un panel administrativo.
-- Gestionar reservas desde el panel administrativo.
-- Validar disponibilidad y evitar solapamientos.
+Desarrollar un sistema web funcional, escalable y responsivo que permita:
 
----
+Presentar el hotel de forma digital y atractiva
+Gestionar reservas de habitaciones
+Administrar usuarios y disponibilidad
+Simular un entorno real de sistema hotelero
 
-#  Objetivo del proyecto
+Tecnologías utilizadas
+Frontend
+HTML5
+CSS3
+JavaScript ES6+
+Arquitectura
+JavaScript Modular
+Web Components
+Persistencia
+LocalStorage (simulación de backend)
+UI/UX
+Diseño Responsive (Mobile First)
+Flexbox & CSS Grid
+Estilo Luxury 
 
-Desarrollar un sistema web funcional y modular que permita al Hotel El Rincón del Carmen tener presencia digital y facilitar el proceso de consulta y reserva de habitaciones.
+Características principales
 
----
+Landing Page
+Hero section moderno y visualmente atractivo
+Habitaciones destacadas
+Servicios del hotel
+Diseño responsive y elegante
+Footer informativo
 
-#  Tecnologías utilizadas
+Sistema de reservas
+Búsqueda de disponibilidad por fechas
+Selección de huéspedes
+Visualización de habitaciones disponibles
+Cálculo automático del total
+Validación de solapamiento de reservas
+Cancelación de reservas
 
-## Frontend
+Autenticación
+Registro de usuarios
+Inicio de sesión
+Persistencia de sesión
+Protección de rutas
 
-- HTML5
-- CSS3
-- JavaScript ES6+
+Panel administrativo
+Gestión de habitaciones (crear, editar, eliminar)
+Gestión de reservas
+Visualización de usuarios
+Control de disponibilidad
 
-## Arquitectura y componentes
+Lógica del sistema
 
-- Web Components
-- JavaScript Modular
+revención de solapamientos
 
-## Persistencia de datos
+El sistema evita reservas duplicadas mediante:
 
-- LocalStorage
-
-## Diseño
-
-- Responsive Design
-- Mobile First
-- Flexbox
-- CSS Grid
-
----
-
-#  Características principales
-
-##  Landing Page
-
-La página principal incluye:
-
-- Hero section interactivo.
-- Diseño luxury moderno.
-- Habitaciones destacadas.
-- Servicios premium.
-- Diseño responsive.
-- Navegación amigable.
-- Footer informativo.
-
----
-
-##  Sistema de reservas
-
-El sistema permite:
-
-- Consultar disponibilidad por fechas.
-- Seleccionar número de huéspedes.
-- Visualizar habitaciones disponibles.
-- Ver información detallada:
-  - camas
-  - capacidad
-  - servicios
-  - precio
-- Calcular automáticamente el total.
-- Realizar reservas.
-- Cancelar reservas.
-
----
-
-##  Sistema de autenticación
-
-Los usuarios pueden:
-
-- Registrarse.
-- Iniciar sesión.
-- Mantener sesión activa.
-- Reservar habitaciones.
-
----
-
-##  Panel administrativo
-
-El administrador puede:
-
-- Gestionar habitaciones.
-- Crear habitaciones.
-- Modificar habitaciones.
-- Eliminar habitaciones.
-- Gestionar reservas.
-- Cancelar reservas.
-- Visualizar información de clientes.
-
----
-
-#  Funcionalidades implementadas
-
-##  Gestión de habitaciones
-
-Cada habitación contiene:
-
-- ID
-- Nombre
-- Cantidad de camas
-- Capacidad máxima
-- Precio por noche
-- Servicios
-- Imagen
-
----
-
-##  Gestión de reservas
-
-Cada reserva contiene:
-
-- ID
-- Usuario
-- Habitación
-- Fecha de entrada
-- Fecha de salida
-- Cantidad de huéspedes
-- Valor total
-
----
-
-##  Validación de disponibilidad
-
-Antes de reservar:
-
-- El sistema valida si la habitación sigue disponible.
-- Evita reservas duplicadas.
-- Evita solapamientos de fechas.
-
----
-
-##  Cancelación de reservas
-
-Cuando una reserva es cancelada:
-
-- La habitación vuelve automáticamente a estar disponible.
-
----
-
-#  Lógica implementada
-
-##  Prevención de solapamiento
-
-El sistema verifica:
-
-```javascript
 checkIn < reservation.checkOut &&
 checkOut > reservation.checkIn
-```
 
-Esto evita que una habitación pueda reservarse en el mismo rango de fechas.
+Cálculo de estadía
+Cálculo automático de noches
+Total dinámico según precio por noche
 
----
+Persistencia
 
-##  Cálculo automático de noches
+Todos los datos se almacenan en:
 
-El sistema calcula automáticamente:
-
-- Cantidad de noches.
-- Valor total.
-
----
-
-##  Persistencia de información
-
-La información se almacena utilizando:
-
-```javascript
 localStorage
-```
 
----
+Incluyendo:
 
-#  Estructura completa del proyecto
+Usuarios
+Reservas
+Habitaciones
+Sesión activa
 
-```bash
+Estructura del proyecto
 hotel-rincon-carmen/
 │
 ├── index.html
@@ -206,7 +99,6 @@ hotel-rincon-carmen/
 ├── README.md
 │
 ├── assets/
-│   │
 │   ├── css/
 │   │   └── global.css
 │   │
@@ -228,265 +120,72 @@ hotel-rincon-carmen/
 │   │
 │   └── images/
 │
-└── .gitignore
-```
 
----
+Módulos principales
 
-#  Explicación de módulos
+storage.js
+Manejo de LocalStorage
+Persistencia de datos
 
-## storage.js
+reservations.js
+Lógica de reservas
+Validación de disponibilidad
+Renderizado dinámico
 
-Maneja:
+auth.js
+Registro e inicio de sesión
+Gestión de usuarios
 
-- Guardado de información.
-- Lectura de información.
-- Persistencia en LocalStorage.
+guards.js
+Protección de rutas
+Control de acceso
 
----
+seed.js
+Datos iniciales del sistema
+Usuario administrador
 
-##  reservations.js
+utils.js
+Funciones auxiliares
+Formato de moneda
+Cálculo de noches
+Generación de IDs
 
-Maneja:
+Diseño 
 
-- Consulta de disponibilidad.
-- Renderizado de habitaciones.
-- Reservas.
-- Validación de disponibilidad.
+El diseño está basado en una estética Luxury Hotel:
 
----
-
-##  auth.js
-
-Maneja:
-
-- Registro de usuarios.
-- Inicio de sesión.
-- Persistencia de sesión.
-
----
-
-##  guards.js
-
-Protege rutas:
-
-- Validación de autenticación.
-- Validación de administrador.
-
----
-
-##  seed.js
-
-Inicializa:
-
-- Habitaciones por defecto.
-- Usuario administrador.
-
----
-
-##  utils.js
-
-Funciones auxiliares:
-
-- Formato de moneda.
-- Generación de IDs.
-- Cálculo de noches.
-
----
-
-#  Diseño y experiencia de usuario
-
-El sitio fue diseñado con enfoque:
-
-- Luxury UI.
-- Responsive.
-- Moderno.
-- Minimalista.
-- Elegante.
-
-Características visuales:
-
-- Colores oscuros premium.
-- Dorado luxury.
-- Cards modernas.
-- Hover animations.
-- Glassmorphism.
-- Sombras suaves.
-- Grid responsive.
-
----
-
-#  Responsive Design
+🎨 Paleta oscura premium
+✨ Detalles dorados elegantes
+🧊 Glassmorphism sutil
+🃏 Cards modernas
+🎬 Animaciones suaves
+📱 Diseño totalmente responsive
+📱 Responsive Design
 
 Compatible con:
 
--  Móviles
--  Computadores
--  Tablets
+📱 Móviles
+📟 Tablets
+💻 Escritorio
 
----
+Seguridad implementada
+Validación de formularios
+Control de acceso por roles
+Protección de rutas privadas
+Validación de fechas
+Verificación de sesión activa
 
-#  Seguridad implementada
+Usuarios del sistema
 
-##  Validaciones
+Administrador
+Correo: admin@hotel.com
+Contraseña: admin123
 
-- Campos obligatorios.
-- Validación de fechas.
-- Validación de sesión.
-- Protección de administrador.
+Proyecto desarrollado como práctica académica simulando un sistema Full Stack Junior, aplicando:
 
----
-
-##  Restricciones
-
-- Solo usuarios registrados pueden reservar.
-- Solo administradores acceden al panel.
-
----
-
-#  Usuarios del sistema
-
-##  Administrador
-
-```txt
-Correo:
-admin@hotel.com
-
-Contraseña:
-admin123
-```
-
----
-
-#  Instalación y ejecución
-
-##  Clonar repositorio
-
-```bash
-git clone URL_DEL_REPOSITORIO
-```
-
----
-
-##  Abrir proyecto
-
-Abrir en:
-
-```txt
-Visual Studio Code
-```
-
----
-
-##  Ejecutar Live Server
-
-Instalar extensión:
-
-```txt
-Live Server
-```
-
----
-
-##  Ejecutar aplicación
-
-Abrir:
-
-```txt
-http://127.0.0.1:5500
-```
-
----
-
-#  Uso de LocalStorage
-
-El proyecto almacena:
-
-- Usuarios
-- Sesiones
-- Habitaciones
-- Reservas
-
----
-
-#  Buenas prácticas implementadas
-
-##  Código modular
-
-Separación de responsabilidades.
-
----
-
-##  Web Components
-
-Navbar y Footer reutilizables.
-
----
-
-##  Responsive Design
-
-Adaptación a múltiples dispositivos.
-
----
-
-##  Clean Code
-
-- Variables descriptivas.
-- Funciones reutilizables.
-- Código organizado.
-
----
-
-##  Escalabilidad
-
-Arquitectura preparada para crecer.
-
----
-
-#  Posibles mejoras futuras
-
-- Integración con backend real.
-- Base de datos SQL.
-- Pasarela de pagos.
-- API REST.
-- Panel analytics.
-- Confirmación por correo.
-- Recuperación de contraseña.
-- Dashboard avanzado.
-
----
-
-# Evidencias del sistema
-
-## Landing Page
-- Hero section
-- Habitaciones
-- Servicios
-
-## Reservas
-- Búsqueda dinámica
-- Validación de disponibilidad
-- Reservas
-
-## Administración
-- Gestión de habitaciones
-- Gestión de reservas
-
----
-
-# Autor
-
-Proyecto desarrollado como simulación Full Stack Junior aplicando:
-
-- HTML5
-- CSS3
-- JavaScript ES6+
-- Arquitectura Modular
-- Web Components
-- LocalStorage
-
----
-
-# Licencia
-
-Proyecto desarrollado con fines educativos y académicos.
+HTML5
+CSS3
+JavaScript ES6+
+Arquitectura modular
+Web Components
+LocalStorage

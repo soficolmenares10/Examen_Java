@@ -2,221 +2,81 @@
 <html lang="es">
 
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <title>
-    Contacto | Hotel El Rincón del Carmen
-  </title>
-
-  <link
-    rel="stylesheet"
-    href="assets/css/global.css"
-  >
-
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | Hotel El Rincón del Carmen</title>
+  <link rel="stylesheet" href="assets/css/global.css">
 </head>
 
 <body>
 
   <!-- NAVBAR -->
-  <app-navbar></app-navbar>
+  <nav class="navbar">
+
+    <a href="index.html" class="logo">
+      Hotel Carmen
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="reservas.html">Reservas</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="admin.html">Admin</a>
+    </div>
+
+  </nav>
 
   <!-- HERO -->
   <section class="contact-hero">
 
     <div class="contact-overlay">
-
-      <h1>
-        Contáctanos
-      </h1>
-
-      <p>
-        Déjanos tus datos y uno de nuestros
-        asesores se comunicará contigo
-        lo antes posible.
-      </p>
-
+      <h1>Contáctanos</h1>
+      <p>Vive una experiencia de lujo en el Hotel El Rincón del Carmen</p>
     </div>
 
   </section>
 
-  <!-- CONTACT -->
+  <!-- CONTACTO -->
   <section class="section">
 
     <div class="section-title">
-
-      <h2>
-        Atención personalizada
-      </h2>
-
-      <p>
-        Completa el formulario y nos pondremos
-        en contacto contigo para ayudarte
-        con tu reserva o cualquier duda.
-      </p>
-
+      <h2>Información de Contacto</h2>
+      <p>Estamos disponibles para ayudarte a reservar la mejor experiencia.</p>
     </div>
 
     <div class="contact-grid">
 
       <!-- INFO -->
-      <div class="contact-box luxury-box">
+      <div class="contact-box">
 
-        <div class="contact-item">
+        <h3>Dirección</h3>
+        <p>Calle 10 #15-20, Medellín, Colombia</p>
 
-          <i class="fa-solid fa-location-dot"></i>
+        <h3>Teléfono</h3>
+        <p>+57 300 000 0000</p>
 
-          <div>
+        <h3>Correo</h3>
+        <p>hotelrincondelcarmen@gmail.com</p>
 
-            <h3>
-              Ubicación
-            </h3>
-
-            <p>
-              Bucaramanga, Santander,
-              Colombia
-            </p>
-
-          </div>
-
-        </div>
-
-        <div class="contact-item">
-
-          <i class="fa-solid fa-phone"></i>
-
-          <div>
-
-            <h3>
-              Teléfono
-            </h3>
-
-            <p>
-              +57 300 000 0000
-            </p>
-
-          </div>
-
-        </div>
-
-        <div class="contact-item">
-
-          <i class="fa-solid fa-envelope"></i>
-
-          <div>
-
-            <h3>
-              Correo
-            </h3>
-
-            <p>
-              contacto@rincondelcarmen.com
-            </p>
-
-          </div>
-
-        </div>
-
-        <div class="contact-item">
-
-          <i class="fa-solid fa-clock"></i>
-
-          <div>
-
-            <h3>
-              Horario
-            </h3>
-
-            <p>
-              Atención 24/7
-            </p>
-
-          </div>
-
-        </div>
+        <h3>Horario</h3>
+        <p>Atención 24/7</p>
 
       </div>
 
       <!-- FORM -->
-      <div class="contact-box luxury-box">
+      <div class="contact-box">
 
-        <form
-          id="contactForm"
-          class="contact-form"
-        >
+        <h3>Escríbenos</h3>
 
-          <input
-            type="text"
-            id="name"
-            placeholder="Nombre completo"
-            required
-          >
+        <form class="contact-form">
 
-          <input
-            type="email"
-            id="email"
-            placeholder="Correo electrónico"
-            required
-          >
+          <input type="text" placeholder="Nombre completo" required>
+          <input type="email" placeholder="Correo electrónico" required>
+          <input type="text" placeholder="Asunto" required>
 
-          <input
-            type="tel"
-            id="phone"
-            placeholder="Número de teléfono"
-            required
-          >
+          <textarea placeholder="Tu mensaje..." required></textarea>
 
-          <select
-            id="service"
-            required
-          >
-
-            <option value="">
-              Selecciona un servicio
-            </option>
-
-            <option>
-              Reserva de habitación
-            </option>
-
-            <option>
-              Eventos
-            </option>
-
-            <option>
-              Spa
-            </option>
-
-            <option>
-              Restaurante
-            </option>
-
-            <option>
-              Otro
-            </option>
-
-          </select>
-
-          <textarea
-            id="message"
-            placeholder="Escribe tu mensaje..."
-            rows="6"
-            required
-          ></textarea>
-
-          <button type="submit">
-            Enviar información
-          </button>
+          <button type="submit">Enviar Mensaje</button>
 
         </form>
 
@@ -226,14 +86,25 @@
 
   </section>
 
-  <!-- MAP -->
-  <section class="map-section">
+  <!-- MAPA -->
+  <section class="section">
 
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31687.963978347705!2d-73.125942!3d7.119349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e683f64b9f31c3b%3A0x4b0e9a40b8f7b8f!2sBucaramanga%2C%20Santander!5e0!3m2!1ses!2sco!4v1716071212121!5m2!1ses!2sco"
-      allowfullscreen=""
-      loading="lazy"
-    ></iframe>
+    <div class="section-title">
+      <h2>Nuestra Ubicación</h2>
+    </div>
+
+    <div class="map-container">
+
+      <iframe
+        src="https://www.google.com/maps?q=Medellin,+Colombia&output=embed"
+        width="100%"
+        height="350"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy">
+      </iframe>
+
+    </div>
 
   </section>
 
@@ -241,69 +112,9 @@
   <app-footer></app-footer>
 
   <!-- COMPONENTS -->
-  <script
-    type="module"
-    src="assets/components/navbar.js"
-  ></script>
-
-  <script
-    type="module"
-    src="assets/components/footer.js"
-  ></script>
-
-  <!-- FORM SCRIPT -->
-  <script type="module">
-
-    const form =
-      document.getElementById('contactForm');
-
-    form.addEventListener(
-      'submit',
-      event => {
-
-        event.preventDefault();
-
-        const contacts =
-          JSON.parse(
-            localStorage.getItem('contacts')
-          ) || [];
-
-        const newContact = {
-
-          id: Date.now(),
-
-          name:
-            document.getElementById('name').value,
-
-          email:
-            document.getElementById('email').value,
-
-          phone:
-            document.getElementById('phone').value,
-
-          service:
-            document.getElementById('service').value,
-
-          message:
-            document.getElementById('message').value
-        };
-
-        contacts.push(newContact);
-
-        localStorage.setItem(
-          'contacts',
-          JSON.stringify(contacts)
-        );
-
-        alert(
-          'Tu información fue enviada correctamente.'
-        );
-
-        form.reset();
-      }
-    );
-
-  </script>
+  <script type="module" src="assets/components/navbar.js"></script>
+  <script type="module" src="assets/components/footer.js"></script>
 
 </body>
+
 </html>

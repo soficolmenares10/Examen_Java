@@ -19,7 +19,7 @@ class AppFooter extends HTMLElement {
           <div class="footer-info">
 
             <p>
-              📍 Cúcuta, Colombia
+              📍 Medellín, Colombia
             </p>
 
             <p>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin | Hotel El Rincón del Carmen</title>
+
+  <link rel="stylesheet" href="assets/css/global.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" class="logo">Hotel Carmen</a>
+
+    <div class="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="reservas.html">Reservas</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+  </nav>
+
+  <!-- ADMIN -->
+  <section class="admin-dashboard">
+
+    <div class="admin-header">
+      <h1>Panel Administrativo</h1>
+      <p>Gestiona habitaciones y reservas</p>
+    </div>
+
+    <!-- CREAR HABITACIÓN -->
+    <div class="admin-card">
+      <h2>Crear Habitación</h2>
+
+      <form id="roomForm">
+
+        <input type="text" id="name" placeholder="Nombre habitación" required>
+        <input type="number" id="beds" placeholder="Cantidad de camas" required>
+        <input type="number" id="capacity" placeholder="Capacidad" required>
+        <input type="number" id="price" placeholder="Precio por noche" required>
+        <input type="text" id="services" placeholder="Servicios" required>
+        <input type="url" id="image" placeholder="URL Imagen" required>
+
+        <button type="submit">Guardar Habitación</button>
+
+      </form>
+    </div>
+
+    <!-- HABITACIONES -->
+    <div class="admin-card">
+      <h2>Habitaciones Registradas</h2>
+      <div class="admin-room-list" id="roomList"></div>
+    </div>
+
+    <!-- RESERVAS -->
+    <div class="admin-card">
+      <h2>Reservas</h2>
+      <div class="reservation-list" id="reservationList"></div>
+    </div>
+
+  </section>
+
+  <app-footer></app-footer>
+
+  <script>
+    const roomForm = document.getElementById("roomForm");
+    const roomList = document.getElementById("roomList");
+    const reservationList = document.getElementById("reservationList");
+
+    let rooms = JSON.parse(localStorage.getItem("rooms")) || [];
+    let reservations = JSON.parse(localStorage.getItem("reservations")) || [];
+
+    renderRooms();
+    renderReservations();
+
+    roomForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const room = {
+        id: Date.now(),
+        name: document.getElementById("name").value.trim(),
+        beds: Number(document.getElementById("beds").value),
+        capacity: Number(document.getElementById("capacity").value),
+        price: Number(document.getElementById("price").value),
+        services: document.getElementById("services").value.trim(),
+        image: document.getElementById("image").value.trim()
+      };
+
+      rooms.push(room);
+      localStorage.setItem("rooms", JSON.stringify(rooms));
+
+      renderRooms();
+      roomForm.reset();
+    });
+
+    function renderRooms() {
+      if (rooms.length === 0) {
+        roomList.innerHTML = "<p>No hay habitaciones registradas.</p>";
+        return;
+      }
+
+      roomList.innerHTML = rooms.map(room => `
+        <div class="admin-room-card">
+          <img src="${room.image}" alt="${room.name}">
+
+          <div class="admin-room-info">
+            <h3>${room.name}</h3>
+            <p>Camas: ${room.beds}</p>
+            <p>Personas: ${room.capacity}</p>
+            <p>Precio: $${room.price}</p>
+            <p>${room.services}</p>
+
+            <div class="admin-buttons">
+              <button class="delete-btn" onclick="deleteRoom(${room.id})">
+                Eliminar
+              </button>
+            </div>
+          </div>
+        </div>
+      `).join("");
+    }
+
+    function deleteRoom(id) {
+      const confirmDelete = confirm("¿Seguro que quieres eliminar esta habitación?");
+      if (!confirmDelete) return;
+
+      rooms = rooms.filter(room => room.id !== id);
+      localStorage.setItem("rooms", JSON.stringify(rooms));
+      renderRooms();
+    }
+
+    function renderReservations() {
+      if (reservations.length === 0) {
+        reservationList.innerHTML = "<p>No hay reservas registradas.</p>";
+        return;
+      }
+
+      reservationList.innerHTML = reservations.map(reservation => `
+        <div class="reservation-card">
+          <div class="admin-room-info">
+            <h3>Reserva</h3>
+            <p>Habitación: ${reservation.roomName}</p>
+            <p>Cliente: ${reservation.user}</p>
+            <p>Fecha: ${reservation.date}</p>
+          </div>
+        </div>
+      `).join("");
+    }
+  </script>
+  
+  <script
+    type="module"
+    src="assets/components/navbar.js"
+  ></script>
+    <script
+        type="module"
+        src="assets/components/footer.js"
+    ></script>
+</body>
+
+</html>
