@@ -60,6 +60,12 @@ Gestión de reservas
 Visualización de usuarios
 Control de disponibilidad
 
+## 📱 Vista Previa del Diseño
+
+| landing page | reservas |
+| :---: | :---: |
+| <img src="./assets/imagenes/Inicio.png" width="250" alt="landing page"> | <img src="./assets/imagenes/reserva.png" width="500" alt="reservas"> |
+
 Lógica del sistema
 
 revención de solapamientos
