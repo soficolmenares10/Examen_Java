@@ -39,7 +39,10 @@ if (searchForm) {
         document.getElementById('guests').value
       );
 
-    // VALIDACIONES
+    /* =========================
+       VALIDACIONES
+    ========================= */
+
     if (!checkIn || !checkOut || !guests) {
 
       alert('Completa todos los campos');
@@ -56,7 +59,10 @@ if (searchForm) {
       return;
     }
 
-    // FILTRAR HABITACIONES
+    /* =========================
+       FILTRAR HABITACIONES
+    ========================= */
+
     const available = rooms.filter(room => {
 
       const overlaps =
@@ -129,6 +135,11 @@ function renderRooms(
 
     card.classList.add('card');
 
+    const session =
+      JSON.parse(
+        localStorage.getItem('session')
+      );
+
     card.innerHTML = `
 
       <div class="room-image">
@@ -166,7 +177,11 @@ function renderRooms(
           class="reserve-btn"
           data-id="${room.id}"
         >
-          Reservar
+          ${
+            session
+              ? 'Reservar ahora'
+              : 'Inicia sesión para reservar'
+          }
         </button>
 
       </div>
@@ -210,9 +225,15 @@ function reserveRoom(
       localStorage.getItem('session')
     );
 
+  /* =========================
+     VALIDAR LOGIN
+  ========================= */
+
   if (!session) {
 
-    alert('Debes iniciar sesión');
+    alert(
+      'Debes iniciar sesión para reservar'
+    );
 
     window.location.href =
       'login.html';
@@ -223,7 +244,10 @@ function reserveRoom(
   const reservations =
     Storage.get('reservations');
 
-  // VALIDAR DISPONIBILIDAD OTRA VEZ
+  /* =========================
+     VALIDAR DISPONIBILIDAD
+  ========================= */
+
   const stillAvailable =
     !reservations.some(reservation => {
 
@@ -243,7 +267,10 @@ function reserveRoom(
     return;
   }
 
-  // CREAR RESERVA
+  /* =========================
+     CREAR RESERVA
+  ========================= */
+
   const reservation = {
 
     id: generateId(),
@@ -272,6 +299,5 @@ function reserveRoom(
     'Reserva realizada correctamente'
   );
 
-  // LIMPIAR RESULTADOS
   availableRooms.innerHTML = '';
 }
