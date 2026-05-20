@@ -6,10 +6,6 @@ import {
   generateId
 } from './utils.js';
 
-import { requireAuth } from './guards.js';
-
-requireAuth();
-
 const searchForm =
   document.getElementById('searchForm');
 
