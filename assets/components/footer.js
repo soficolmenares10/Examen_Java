@@ -40,6 +40,7 @@ class AppFooter extends HTMLElement {
 
           </div>
 
+
         </div>
 
       </footer>
@@ -50,4 +51,4 @@ class AppFooter extends HTMLElement {
 customElements.define(
   'app-footer',
   AppFooter
-);
+);// usa git checkout <nombre-de-la-rama
